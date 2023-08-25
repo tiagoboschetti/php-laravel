@@ -26,3 +26,75 @@ Feito isso crie uma tela com um botão simples que dispara o processamento desta
 Utilize os padrões que preferir para as tarefas.
 
 Boa sorte!
+
+---
+
+## Summary
+
+- About
+- Requirements
+- Getting Started
+  - Cloning & Building
+  - Environment Set Up
+
+## Requirements
+
+To make this little project work properly you'll need some tools!
+
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/gettingstarted)
+- [Git](https://git-scm.com/downloads)
+- [Postman](https://www.getpostman.com/apps)
+
+
+## Getting Started
+### 1. Cloning & Building
+  **1.1.** Clone the repository:
+
+  ```
+   # git clone git@github.com:tiagoboschetti/php-lumen.git
+   # git checkout master
+  ```
+
+  **1.2.** Then build & run the project using Docker Container:
+
+  ```
+   # docker-compose up --build -d
+  ```
+  ---
+
+### 2. Environment Set Up
+  **2.1.** Installing project dependencies:
+
+  ```
+   # docker exec -it php bash
+   # composer install
+  ```
+
+  **2.3.** Running tests:
+
+  The docker must be up in order for the tests to run properly.
+
+  ```
+   # docker exec -it php bash
+   # ./vendor/bin/phpunit tests
+  ```
+  ---
+
+    **3.2.** Executing the migrations (creating our database structure):
+
+  ```
+    # docker exec -it php bash
+    # cp .env.example .env
+    # php artisan migrate;
+  ```
+
+   **3.3.** Executing the seeders (creating our database structure):
+
+  ```
+    # docker exec -it php bash
+    # cp .env.example .env
+    # php artisan db:seed --class=CategorySeeder;
+  ```
+
+  Now the Application should be up and running on localhost listening on port 9090.
