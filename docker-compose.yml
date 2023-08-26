@@ -24,21 +24,20 @@ services:
       - nginx
       - db
     depends_on:
-      - mysql
+      - postgres
     volumes:
       - ./src/:/var/www/html
 
-  mysql:
-    build: ./docker/mysql
-    container_name: mysql
+  postgres:
+    build: ./docker/postgres
+    container_name: postgres
     restart: always
     networks:
         - db
     ports:
-        - '3306:3306'
+        - '6543:5432'
     environment:
-        - MYSQL_ROOT_PASSWORD=mysql
-        - MYSQL_DATABASE=laravel
+        - POSTGRES_PASSWORD=postgres
 
 networks:
   nginx:
