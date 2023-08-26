@@ -31,7 +31,6 @@ Boa sorte!
 
 ## Summary
 
-- About
 - Requirements
 - Getting Started
   - Cloning & Building
@@ -153,4 +152,3 @@ Intended response:
     "Documents imported successfully!"
   ```
 ---
-
